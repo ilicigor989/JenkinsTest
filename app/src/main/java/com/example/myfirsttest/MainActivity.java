@@ -11,8 +11,16 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView showSumm;
+    EditText first;
+    EditText second;
+    Button summ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,15 +29,34 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        summ=findViewById(R.id.button);
+        showSumm=findViewById(R.id.textView);
+        first=findViewById(R.id.editText);
+        second=findViewById(R.id.editText2);
+
+        summ.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+
+                int one= Integer.parseInt(first.getText().toString());
+                int two= Integer.parseInt(second.getText().toString());
+                int summ=summ(one,two);
+                showSumm.setText(String.valueOf(summ));
+
+
             }
         });
+
+
     }
+
+    public int summ(int a, int b){
+
+
+        return a + b;
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -44,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -52,4 +78,5 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }
