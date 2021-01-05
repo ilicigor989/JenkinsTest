@@ -10,9 +10,8 @@ public class MainActivityTest {
     public void summ() {
 
         MainActivity ma=new MainActivity();
-        int rez=ma.summ(5,6);
+        int rez=ma.summ(5,9);
         assertEquals(14,rez);
-
 
     }
 }

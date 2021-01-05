@@ -43,10 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 int summ=summ(one,two);
                 showSumm.setText(String.valueOf(summ));
 
-
             }
         });
-
 
     }
 
