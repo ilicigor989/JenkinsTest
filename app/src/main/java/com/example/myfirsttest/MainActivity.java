@@ -51,10 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public int summ(int a, int b){
-
-
         return a + b;
-
     }
 
 

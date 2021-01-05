@@ -11,7 +11,7 @@ public class MainActivityTest {
 
         MainActivity ma=new MainActivity();
         int rez=ma.summ(5,6);
-        assertEquals(11,rez);
+        assertEquals(15,rez);
 
 
     }
